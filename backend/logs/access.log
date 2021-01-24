@@ -20,3 +20,6 @@
 ::1 - - [23/Jan/2021:23:33:48 +0000] "GET /goals HTTP/1.1" 500 35 "-" "PostmanRuntime/7.26.8"
 ::1 - - [23/Jan/2021:23:37:48 +0000] "GET /goals HTTP/1.1" 200 12 "-" "PostmanRuntime/7.26.8"
 ::1 - - [23/Jan/2021:23:38:53 +0000] "GET /goals HTTP/1.1" 200 12 "-" "PostmanRuntime/7.26.8"
+aa
+::ffff:172.18.0.1 - - [24/Jan/2021:03:10:13 +0000] "GET /goals HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+This was added from the HOST

@@ -10,7 +10,7 @@
     "deleteMongoCont": "npm run stopMongoCont && docker rm contmongo",
     "buildApiImage": "docker build -t imageapi:1.0 --build-arg DEFAULT_PORT=2000   .",
     "deleteApiImage": "docker rmi imageapi:1.0",
-    "runApiCont": "docker run -dp 5000:2000 --name contapi --network mybridgenet -e PORT=2000 imageapi:1.0",
+    "runApiCont": "docker run -dp 5000:2000 --name contapi --network mybridgenet -v D:/DATA/DOCKER/multicontainerapp/backend/logs:/app/logs -e PORT=2000 imageapi:1.0",
     "stopApiCont": "docker stop contapi",
     "deleteApiCont": "docker rm contapi",
     "shellIntoMongoCont": "docker container exec -it contmongo /bin/sh",
