@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runMongoCont": "docker run -dp 27017:27017 --network mybridgenet --name contmongo -v shared_database:/data/db -e MONGO_INITDB_ROOT_USERNAME=rm  -e MONGO_INITDB_ROOT_PASSWORD=rm -e MONGO_INITDB_DATABASE=rmdb mongo",
+    "stopMongoCont": "docker stop contmongo",
+    "deleteMongoCont": "npm run stopMongoCont && docker rm contmongo",
+    "buildApiImage": "docker build -t imageapi:1.0 --build-arg DEFAULT_PORT=2000   .",
+    "deleteApiImage": "docker rmi imageapi:1.0",
+    "runApiCont": "docker run -dp 5000:2000 --name contapi --network mybridgenet -e PORT=2000 imageapi:1.0",
+    "stopApiCont": "docker stop contapi",
+    "deleteApiCont": "docker rm contapi",
+    "shellIntoMongoCont": "docker container exec -it contmongo /bin/sh",
+    "shellIntoApiCont": "docker container exec -it contapi /bin/sh"
+  },
+  "author": "Maximilian Schwarzmüller / Academind GmbH",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3",
+    "morgan": "^1.10.0"
+  }
+}

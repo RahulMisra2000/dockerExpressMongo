@@ -1,0 +1,14 @@
+FROM node
+WORKDIR /app
+
+COPY . .
+RUN npm install
+
+ARG DEFAULT_PORT=9999
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $DEFAULT_PORT
+
+CMD ["node", "server.js"]
+
+
